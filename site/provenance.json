@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "repositoryId": "com.nickel-jp.repos.avatar-recovery-updater",
+  "repositoryUrl": "https://nickel-jp.github.io/avatar-recovery-updater-unity/index.json",
+  "packageId": "com.nickel-jp.avatar-recovery.updater",
+  "packageVersion": "0.1.0",
+  "packageZipSha256": "7c03d463e58510dbcdf515c767d3535c68f6352fa496d440ddfb18c81836559b",
+  "editorAssemblySha256": "577b54840141fdb70aea64fc82144cdfea98d752438e7489ce804e03b0cf9c62",
+  "sourceFingerprint": "f1966c642af66277eb04f303b0342e0db6a122004799e9e989b826ae491aa134"
+}

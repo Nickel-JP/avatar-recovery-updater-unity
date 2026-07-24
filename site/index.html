@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A standalone Unity Editor add-on that notifies you when a new AvatarRecovery version is available.">
+  <title>AvatarRecovery Update Notifier</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">Unity Editor Add-on</p>
+      <h1 id="page-title">AvatarRecovery<br><span>Update Notifier</span></h1>
+      <p class="lead">Get a notification in the Unity Editor when a new version of AvatarRecovery is available.</p>
+      <div class="actions">
+        <a class="button primary" href="vcc://vpm/addRepo?url=https%3A%2F%2Fnickel-jp.github.io%2Favatar-recovery-updater-unity%2Findex.json">Add to VCC / ALCOM</a>
+        <a class="button secondary" href="https://github.com/Nickel-JP/avatar-recovery-updater-unity">View on GitHub</a>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="features-title">
+      <h2 id="features-title">Safe, notification-only updates</h2>
+      <div class="features">
+        <article>
+          <h3>Checks only when needed</h3>
+          <p>If AvatarRecovery is not installed in the project, automatic checks make no network request.</p>
+        </article>
+        <article>
+          <h3>No automatic installation</h3>
+          <p>The notifier never modifies Packages or Assets. Updates remain a manual action in your package manager.</p>
+        </article>
+        <article>
+          <h3>Unity 2022.3 support</h3>
+          <p>The notifier can report newly published versions even when the project contains an older AvatarRecovery release.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel repository" aria-labelledby="repository-title">
+      <div>
+        <p class="eyebrow">VPM Repository</p>
+        <h2 id="repository-title">Install with VCC or ALCOM</h2>
+        <p>Use the button above to open the app currently registered for VPM links. If custom links are disabled, add the following URL in your package manager's VPM repository settings.</p>
+      </div>
+      <div class="repository-value">
+        <input id="notifier-repository-url" type="url" value="https://nickel-jp.github.io/avatar-recovery-updater-unity/index.json" aria-label="AvatarRecovery Update Notifier repository URL" readonly>
+        <button class="copy-button" type="button" data-copy-target="notifier-repository-url">Copy repository URL</button>
+        <span class="copy-status" role="status" aria-live="polite" aria-atomic="true"></span>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="license-title">
+      <div>
+        <p class="eyebrow">License</p>
+        <h2 id="license-title">Usage terms</h2>
+        <p>Personal, private, and internal use is permitted. Redistribution or integration into another public tool requires written permission. See the LICENSE on GitHub for the complete terms.</p>
+      </div>
+    </section>
+
+    <nav class="footer-links" aria-label="Related links">
+      <a href="./update/">Manual update guide</a>
+      <a href="https://github.com/Nickel-JP/avatar-recovery-unity">AvatarRecovery</a>
+      <a href="https://discord.gg/M9nFq8HXv">Community Server</a>
+      <a href="https://github.com/Nickel-JP/avatar-recovery-updater-unity/blob/main/LICENSE">LICENSE</a>
+    </nav>
+  </main>
+  <script>
+    (() => {
+      const button = document.querySelector("[data-copy-target]");
+      const status = document.querySelector(".copy-status");
+      button.addEventListener("click", async () => {
+        const field = document.getElementById(button.dataset.copyTarget);
+        const value = field.value.trim();
+        try {
+          await navigator.clipboard.writeText(value);
+          status.textContent = "Repository URL copied.";
+        } catch {
+          field.focus();
+          field.select();
+          status.textContent = "Copy failed. Copy the selected repository URL manually.";
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Public配布リポジトリは明示した成果物だけを追跡します。
+*
+!.gitattributes
+!.gitignore
+!README.md
+!CHANGELOG.md
+!LICENSE
+!PublicDistributionPolicy.ps1
+!Verify-PublicDistribution.ps1
+!.github/
+!.github/dependabot.yml
+!.github/workflows/
+!.github/workflows/pages.yml
+!site/
+!site/**

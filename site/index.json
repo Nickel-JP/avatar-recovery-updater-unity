@@ -1,0 +1,39 @@
+{
+  "name": "AvatarRecovery Update Notifier",
+  "id": "com.nickel-jp.repos.avatar-recovery-updater",
+  "url": "https://nickel-jp.github.io/avatar-recovery-updater-unity/index.json",
+  "author": "Nickel-JP",
+  "packages": {
+    "com.nickel-jp.avatar-recovery.updater": {
+      "versions": {
+        "0.1.0": {
+          "name": "com.nickel-jp.avatar-recovery.updater",
+          "displayName": "AvatarRecovery Update Notifier",
+          "version": "0.1.0",
+          "unity": "2022.3",
+          "description": "A separate Unity Editor notifier for published AvatarRecovery updates. It never modifies project packages or performs automatic updates.",
+          "type": "tool",
+          "license": "SEE LICENSE IN LICENSE",
+          "keywords": [
+            "vrchat",
+            "avatar-recovery",
+            "update",
+            "notifier",
+            "editor"
+          ],
+          "author": {
+            "name": "Nickel-JP",
+            "email": "Nickel-JP@users.noreply.github.com",
+            "url": "https://github.com/Nickel-JP"
+          },
+          "dependencies": {
+            "com.unity.nuget.newtonsoft-json": "3.2.1"
+          },
+          "url": "https://nickel-jp.github.io/avatar-recovery-updater-unity/packages/com.nickel-jp.avatar-recovery.updater-0.1.0.zip",
+          "repo": "https://nickel-jp.github.io/avatar-recovery-updater-unity/index.json",
+          "zipSHA256": "7c03d463e58510dbcdf515c767d3535c68f6352fa496d440ddfb18c81836559b"
+        }
+      }
+    }
+  }
+}

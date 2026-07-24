@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Manual update instructions for AvatarRecovery using VCC or ALCOM.">
+  <title>AvatarRecovery Manual Update Guide</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">Manual Update Guide</p>
+      <h1>AvatarRecovery<br><span>Update Guide</span></h1>
+      <p class="lead">AvatarRecovery Update Notifier does not install updates. Open your project in VCC or ALCOM, then update AvatarRecovery to the latest published version.</p>
+      <ol class="update-steps">
+        <li>Close the target project in Unity.</li>
+        <li>Open the project in VCC or ALCOM.</li>
+        <li>Open the project's package list and update AvatarRecovery to the newest available version.</li>
+        <li>Reopen the project in Unity.</li>
+      </ol>
+      <div class="actions">
+        <a class="button primary" href="https://nickel-jp.github.io/avatar-recovery-unity/add/">VCC repository setup</a>
+        <a class="button secondary" href="https://nickel-jp.github.io/avatar-recovery-unity/add/alcom/">ALCOM repository setup</a>
+      </div>
+    </section>
+    <section class="panel repository">
+      <div>
+        <p class="eyebrow">AvatarRecovery Repository</p>
+        <h2>Manual repository URL</h2>
+        <p>If AvatarRecovery is not listed in your package manager, add this URL in the VPM repository settings.</p>
+      </div>
+      <div class="repository-value">
+        <input id="avatar-recovery-repository-url" type="url" value="https://nickel-jp.github.io/avatar-recovery-unity/index.json" aria-label="AvatarRecovery repository URL" readonly>
+        <button class="copy-button" type="button" data-copy-target="avatar-recovery-repository-url">Copy repository URL</button>
+        <span class="copy-status" role="status" aria-live="polite" aria-atomic="true"></span>
+      </div>
+    </section>
+    <nav class="footer-links" aria-label="Related links">
+      <a href="../">Update Notifier home</a>
+      <a href="https://github.com/Nickel-JP/avatar-recovery-unity">AvatarRecovery GitHub</a>
+    </nav>
+  </main>
+  <script>
+    (() => {
+      const button = document.querySelector("[data-copy-target]");
+      const status = document.querySelector(".copy-status");
+      button.addEventListener("click", async () => {
+        const field = document.getElementById(button.dataset.copyTarget);
+        const value = field.value.trim();
+        try {
+          await navigator.clipboard.writeText(value);
+          status.textContent = "Repository URL copied.";
+        } catch {
+          field.focus();
+          field.select();
+          status.textContent = "Copy failed. Copy the selected repository URL manually.";
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
